@@ -1,0 +1,46 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.year-list {
+  grid-column: 1;
+}
+
+.mission-list {
+  grid-column: 2;
+}
+
+.grid-container-missions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.grid-item-mission {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.card-image {
+  max-width: 150px;
+}
+
+.card {
+  background-color: aquamarine;
+  border: solid 1px black;
+  padding: 10px;
+  height: 400px;
+  width: 300px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.year-list a.active {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+

@@ -1,0 +1,39 @@
+<h1> SpaceX Mission Details </h1>
+<div class="card" *ngIf="selectedMission">
+  <div class="mission-details">
+    <img [src]="selectedMission.links.mission_patch_small" alt="Mission Patch">
+    <div>
+      <h2>Mission - {{ selectedMission.mission_name }}</h2>
+      <p>Name: {{ selectedMission.mission_name }}</p>
+      <p>Launch year: {{ selectedMission.launch_year }} </p>
+      <h2>Rocket</h2>
+      <p>Name: {{ selectedMission.rocket.rocket_name }}</p>
+      <p>Type: {{ selectedMission.rocket.rocket_type}}</p>
+      <h2>Launch Site</h2>
+      <p>Name: {{ selectedMission.launch_site.site_name_long }}</p>
+    </div>
+ 
+  </div>
+  <div>
+    <h2>Launch Details</h2>
+    <p>{{ selectedMission.details }}</p>
+    <h2>More Info on Launch Details</h2>
+    <ul>
+      <li><a href="{{ selectedMission.links.wikipedia}}" target="_blank">
+        Wikipedia
+      </a></li>
+      <li><a href="{{ selectedMission.links.article_link}}" target="_blank">
+        Article
+      </a></li>
+      <li><a href="{{ selectedMission.links.video_link }}" target="_blank">
+        Video
+      </a></li>
+      <li><a href="{{ selectedMission.links.youtube_id }}" target="_blank">
+        Youtube
+      </a></li>
+      </ul>
+  </div> 
+  
+</div>
+
+  

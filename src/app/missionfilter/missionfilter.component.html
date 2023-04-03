@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="grid-container">
+      <div class="year-list">
+        <h2>Years</h2>
+        <a mat-list-item *ngFor="let year of years"
+        [routerLink]="['/missions']"
+        [queryParams]="{ year: year }"
+        [routerLinkActive]="'active'">{{ year }}</a>
+      </div>
+      <div class="mission-list">
+        <h2>Missions</h2>
+        <div class="grid-container-missions" *ngIf="missions && missions.length > 0; else noMissions">
+          <div class="grid-item-mission" *ngFor="let mission of missions">
+            <mat-card class="card">
+              <img mat-card-image [src]="mission.links.mission_patch_small" alt="{{ mission.mission_name }}" class="card-image">
+              <mat-card-content>
+                <h3>{{ mission.mission_name }}</h3>
+                <p>Flight Number: {{ mission.flight_number }}</p>
+                <p>Launch Year: {{ mission.launch_year }}</p>
+                <p>Successful Launch: {{ mission.launch_success ? 'Yes' : 'No' }}</p>
+                <p>Successful Landing: {{ mission.rocket.first_stage.cores[0].land_success ? 'Yes' : 'No' }}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #noMissions>
+          <p>No Missions Found</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  
+  
